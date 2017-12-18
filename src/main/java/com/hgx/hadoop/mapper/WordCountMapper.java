@@ -7,23 +7,17 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 public class WordCountMapper extends
-		Mapper<LongWritable, Text, Text, LongWritable> {
+        Mapper<LongWritable, Text, Text, LongWritable> {
 
-	@Override
-	protected void map(LongWritable key, Text value, Context context)
-			throws IOException, InterruptedException {
+    @Override
+    protected void map(LongWritable key, Text value, Context context)
+            throws IOException, InterruptedException {
+        String line = value.toString();
+        String[] words = line.split(" ");
+        for (String word : words) {
+            context.write(new Text(word), new LongWritable(1));
+        }
 
-		// �õ���һ�е�����
-		String line = value.toString();
-		// �з���һ�еõ�һ�����ʵ�����
-		String[] words = line.split(" ");
-		// ��ÿ�����ʸ���һ�����������ȥ��������Ϊ�����key��������Ϊ�����value
-		for (String word : words) {
-
-			// ���������������<hello,1>������key-value��
-			context.write(new Text(word), new LongWritable(1));
-		}
-
-	}
+    }
 
 }
