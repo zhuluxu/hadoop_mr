@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <name>hadoop-hdfs</name>
   <groupId>com.hgx.hadoop</groupId>
@@ -16,7 +16,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- 编译时的编码 -->
     <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-    <spring.framework.version>4.3.6.RELEASE</spring.framework.version>
     <!-- log4j日志文件管理包版本 -->
     <slf4j.version>1.7.7</slf4j.version>
     <log4j.version>1.2.17</log4j.version>
@@ -104,6 +103,14 @@
           <contextPath>/</contextPath>
         </configuration>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.6</source>
+                <target>1.6</target>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 

@@ -39,3 +39,142 @@ java.io.IOException: Could not locate executable null\bin\winutils.exe in the Ha
 [DEBUG] [2017-12-19 11:06:44][org.apache.hadoop.security.UserGroupInformation]Using user: "NTUserPrincipal: hegx" with name hegx
 [DEBUG] [2017-12-19 11:06:44][org.apache.hadoop.security.UserGroupInformation]User entry: "hegx"
 [DEBUG] [2017-12-19 11:06:44][org.apache.hadoop.security.UserGroupInformation]UGI loginUser:hegx (auth:SIMPLE)
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.metrics2.lib.MutableMetricsFactory]field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName=Ops, always=false, about=, type=DEFAULT, value=[Rate of successful kerberos logins and latency (milliseconds)], valueName=Time)
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.metrics2.lib.MutableMetricsFactory]field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName=Ops, always=false, about=, type=DEFAULT, value=[Rate of failed kerberos logins and latency (milliseconds)], valueName=Time)
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.metrics2.lib.MutableMetricsFactory]field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName=Ops, always=false, about=, type=DEFAULT, value=[GetGroups], valueName=Time)
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.metrics2.impl.MetricsSystemImpl]UgiMetrics, User and group related metrics
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.util.Shell]Failed to detect a valid hadoop home directory
+java.io.IOException: HADOOP_HOME or hadoop.home.dir are not set.
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:303)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:328)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:272)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:260)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:790)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:760)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:633)
+	at org.apache.hadoop.mapreduce.task.JobContextImpl.<init>(JobContextImpl.java:72)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:142)
+	at org.apache.hadoop.mapreduce.Job.getInstance(Job.java:185)
+	at com.hgx.hadoop.mapper.WorkCountRunner.main(WorkCountRunner.java:24)
+[ERROR] [2017-12-19 11:18:09][org.apache.hadoop.util.Shell]Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:356)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:371)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:364)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:272)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:260)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:790)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:760)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:633)
+	at org.apache.hadoop.mapreduce.task.JobContextImpl.<init>(JobContextImpl.java:72)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:142)
+	at org.apache.hadoop.mapreduce.Job.getInstance(Job.java:185)
+	at com.hgx.hadoop.mapper.WorkCountRunner.main(WorkCountRunner.java:24)
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.Groups] Creating new Groups object
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.util.NativeCodeLoader]Trying to load the custom-built native-hadoop library...
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.util.NativeCodeLoader]Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.util.NativeCodeLoader]java.library.path=D:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;D:\Program Files\Java\jdk1.8.0_121\bin;D:\Program Files\Java\jdk1.8.0_121\jre\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\PuTTY\;C:\Program Files\VanDyke Software\Clients\;D:\smallaon\apache-maven-3.5.2\bin;C:\Users\hegx\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\OpenVPN\bin;.
+[WARN] [2017-12-19 11:18:09][org.apache.hadoop.util.NativeCodeLoader]Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.util.PerformanceAdvisory]Falling back to shell based
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback]Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.Groups]Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.UserGroupInformation]hadoop login
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.UserGroupInformation]hadoop login commit
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.UserGroupInformation]using local user:NTUserPrincipal: hegx
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.UserGroupInformation]Using user: "NTUserPrincipal: hegx" with name hegx
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.UserGroupInformation]User entry: "hegx"
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.security.UserGroupInformation]UGI loginUser:hegx (auth:SIMPLE)
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.hdfs.BlockReaderLocal]dfs.client.use.legacy.blockreader.local = false
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.hdfs.BlockReaderLocal]dfs.client.read.shortcircuit = false
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.hdfs.BlockReaderLocal]dfs.client.domain.socket.data.traffic = false
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.hdfs.BlockReaderLocal]dfs.domain.socket.path = 
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.io.retry.RetryUtils]multipleLinearRandomRetry = null
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.ipc.Server]rpcKind=RPC_PROTOCOL_BUFFER, rpcRequestWrapperClass=class org.apache.hadoop.ipc.ProtobufRpcEngine$RpcRequestWrapper, rpcInvoker=org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker@6a47b187
+[DEBUG] [2017-12-19 11:18:09][org.apache.hadoop.ipc.Client]getting client out of cache: org.apache.hadoop.ipc.Client@571c5681
+[DEBUG] [2017-12-19 11:18:10][org.apache.hadoop.util.PerformanceAdvisory]Both short-circuit local reads and UNIX domain socket are disabled.
+[DEBUG] [2017-12-19 11:18:10][org.apache.hadoop.hdfs.protocol.datatransfer.sasl.DataTransferSaslUtil]DataTransferProtocol not using SaslPropertiesResolver, no QOP found in configuration for dfs.data.transfer.protection
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.security.UserGroupInformation]PrivilegedAction as:hegx (auth:SIMPLE) from:org.apache.hadoop.mapreduce.Job.connect(Job.java:1256)
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.mapreduce.Cluster]Trying ClientProtocolProvider : org.apache.hadoop.mapred.YarnClientProtocolProvider
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.service.AbstractService]Service: org.apache.hadoop.mapred.ResourceMgrDelegate entered state INITED
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.service.AbstractService]Service: org.apache.hadoop.yarn.client.api.impl.YarnClientImpl entered state INITED
+[INFO] [2017-12-19 11:18:11][org.apache.hadoop.yarn.client.RMProxy]Connecting to ResourceManager at hadoop01/192.168.10.2:8032
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.security.UserGroupInformation]PrivilegedAction as:hegx (auth:SIMPLE) from:org.apache.hadoop.yarn.client.RMProxy.getProxy(RMProxy.java:136)
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.yarn.ipc.YarnRPC]Creating YarnRPC for org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC]Creating a HadoopYarnProtoRpc proxy for protocol interface org.apache.hadoop.yarn.api.ApplicationClientProtocol
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.ipc.Client]getting client out of cache: org.apache.hadoop.ipc.Client@571c5681
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.service.AbstractService]Service org.apache.hadoop.yarn.client.api.impl.YarnClientImpl is started
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.service.AbstractService]Service org.apache.hadoop.mapred.ResourceMgrDelegate is started
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.security.UserGroupInformation]PrivilegedAction as:hegx (auth:SIMPLE) from:org.apache.hadoop.fs.FileContext.getAbstractFileSystem(FileContext.java:331)
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.hdfs.BlockReaderLocal]dfs.client.use.legacy.blockreader.local = false
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.hdfs.BlockReaderLocal]dfs.client.read.shortcircuit = false
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.hdfs.BlockReaderLocal]dfs.client.domain.socket.data.traffic = false
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.hdfs.BlockReaderLocal]dfs.domain.socket.path = 
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.io.retry.RetryUtils]multipleLinearRandomRetry = null
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.ipc.Client]getting client out of cache: org.apache.hadoop.ipc.Client@571c5681
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.hdfs.protocol.datatransfer.sasl.DataTransferSaslUtil]DataTransferProtocol not using SaslPropertiesResolver, no QOP found in configuration for dfs.data.transfer.protection
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.mapreduce.Cluster]Picked org.apache.hadoop.mapred.YarnClientProtocolProvider as the ClientProtocolProvider
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.security.UserGroupInformation]PrivilegedAction as:hegx (auth:SIMPLE) from:org.apache.hadoop.mapreduce.Cluster.getFileSystem(Cluster.java:162)
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.security.UserGroupInformation]PrivilegedAction as:hegx (auth:SIMPLE) from:org.apache.hadoop.mapreduce.Job.submit(Job.java:1287)
+[DEBUG] [2017-12-19 11:18:11][org.apache.hadoop.ipc.Client]stopping client from cache: org.apache.hadoop.ipc.Client@571c5681
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.metrics2.lib.MutableMetricsFactory]field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName=Ops, always=false, about=, type=DEFAULT, value=[Rate of successful kerberos logins and latency (milliseconds)], valueName=Time)
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.metrics2.lib.MutableMetricsFactory]field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName=Ops, always=false, about=, type=DEFAULT, value=[Rate of failed kerberos logins and latency (milliseconds)], valueName=Time)
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.metrics2.lib.MutableMetricsFactory]field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(sampleName=Ops, always=false, about=, type=DEFAULT, value=[GetGroups], valueName=Time)
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.metrics2.impl.MetricsSystemImpl]UgiMetrics, User and group related metrics
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.util.Shell]Failed to detect a valid hadoop home directory
+java.io.IOException: HADOOP_HOME or hadoop.home.dir are not set.
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:303)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:328)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:272)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:260)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:790)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:760)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:633)
+	at org.apache.hadoop.mapreduce.task.JobContextImpl.<init>(JobContextImpl.java:72)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:142)
+	at org.apache.hadoop.mapreduce.Job.getInstance(Job.java:185)
+	at com.hgx.hadoop.mapper.WorkCountRunner.main(WorkCountRunner.java:24)
+[ERROR] [2017-12-19 11:20:19][org.apache.hadoop.util.Shell]Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:356)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:371)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:364)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:272)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:260)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:790)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:760)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:633)
+	at org.apache.hadoop.mapreduce.task.JobContextImpl.<init>(JobContextImpl.java:72)
+	at org.apache.hadoop.mapreduce.Job.<init>(Job.java:142)
+	at org.apache.hadoop.mapreduce.Job.getInstance(Job.java:185)
+	at com.hgx.hadoop.mapper.WorkCountRunner.main(WorkCountRunner.java:24)
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.Groups] Creating new Groups object
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.util.NativeCodeLoader]Trying to load the custom-built native-hadoop library...
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.util.NativeCodeLoader]Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.util.NativeCodeLoader]java.library.path=D:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;D:\Program Files\Java\jdk1.8.0_121\bin;D:\Program Files\Java\jdk1.8.0_121\jre\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\PuTTY\;C:\Program Files\VanDyke Software\Clients\;D:\smallaon\apache-maven-3.5.2\bin;C:\Users\hegx\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\OpenVPN\bin;.
+[WARN] [2017-12-19 11:20:19][org.apache.hadoop.util.NativeCodeLoader]Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.util.PerformanceAdvisory]Falling back to shell based
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback]Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.Groups]Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]hadoop login
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]hadoop login commit
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]using local user:NTUserPrincipal: hegx
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]Using user: "NTUserPrincipal: hegx" with name hegx
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]User entry: "hegx"
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]UGI loginUser:hegx (auth:SIMPLE)
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]PrivilegedAction as:hegx (auth:SIMPLE) from:org.apache.hadoop.mapreduce.Job.connect(Job.java:1256)
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.mapreduce.Cluster]Trying ClientProtocolProvider : org.apache.hadoop.mapred.YarnClientProtocolProvider
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.mapreduce.Cluster]Cannot pick org.apache.hadoop.mapred.YarnClientProtocolProvider as the ClientProtocolProvider - returned null protocol
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.mapreduce.Cluster]Trying ClientProtocolProvider : org.apache.hadoop.mapred.LocalClientProtocolProvider
+[INFO] [2017-12-19 11:20:19][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2017-12-19 11:20:19][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.mapreduce.Cluster]Picked org.apache.hadoop.mapred.LocalClientProtocolProvider as the ClientProtocolProvider
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]PrivilegedAction as:hegx (auth:SIMPLE) from:org.apache.hadoop.mapreduce.Cluster.getFileSystem(Cluster.java:162)
+[DEBUG] [2017-12-19 11:20:19][org.apache.hadoop.security.UserGroupInformation]PrivilegedAction as:hegx (auth:SIMPLE) from:org.apache.hadoop.mapreduce.Job.submit(Job.java:1287)
