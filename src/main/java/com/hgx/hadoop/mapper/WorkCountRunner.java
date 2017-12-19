@@ -1,4 +1,4 @@
-package com.hgx.hadoop.mapper.test;
+package com.hgx.hadoop.mapper;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

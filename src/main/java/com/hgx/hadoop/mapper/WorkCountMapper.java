@@ -1,4 +1,4 @@
-package com.hgx.hadoop.mapper.test;
+package com.hgx.hadoop.mapper;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

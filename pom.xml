@@ -9,6 +9,20 @@
   <artifactId>hadoop-hdfs</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <properties>
+    <jdk.version>1.8</jdk.version>
+    <!-- 文件拷贝时的编码 -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- 编译时的编码 -->
+    <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    <spring.framework.version>4.3.6.RELEASE</spring.framework.version>
+    <!-- log4j日志文件管理包版本 -->
+    <slf4j.version>1.7.7</slf4j.version>
+    <log4j.version>1.2.17</log4j.version>
+    <jackson.version>2.5.4</jackson.version>
+  </properties>
+
     <dependencies>
       <dependency>
         <groupId>org.apache.hadoop</groupId>
@@ -35,6 +49,34 @@
         <artifactId>hadoop-mapreduce-client-common</artifactId>
         <version>2.7.1</version>
       </dependency>
+      <!-- 日志文件管理包 -->
+      <!-- log start -->
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+
+
+      <!-- 格式化对象，方便输出日志 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.1.41</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+      <!-- log end -->
     </dependencies>
 
     <!--添加apache源-->
@@ -44,7 +86,6 @@
         <url>http://maven.apache.org</url>
       </repository>
     </repositories>
-
 
   <build>
     <plugins>
