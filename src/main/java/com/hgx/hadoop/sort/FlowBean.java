@@ -1,6 +1,6 @@
-package com.hgx.hadoop.serializable;
+package com.hgx.hadoop.sort;
 
-import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -11,7 +11,7 @@ import java.io.IOException;
  * @Description:用来输出的bean
  * @Date: 14:31 2017/12/19
  */
-public class FlowBean  implements Writable {
+public class FlowBean  implements WritableComparable<FlowBean> {
 
     /**手机号码*/
     private String phoneNumber;
@@ -24,6 +24,12 @@ public class FlowBean  implements Writable {
 
     /**流量总和*/
     private long sumFlowAmount;
+
+    /**重写比较方法*/
+    @Override
+    public int compareTo(FlowBean o) {
+        return this.sumFlowAmount>o.getSumFlowAmount()?-1:1;
+    }
 
     public FlowBean() {
     }
@@ -96,6 +102,6 @@ public class FlowBean  implements Writable {
     /**重写toString方法*/
     @Override
     public String toString() {
-        return ""+this.flowLow+"\t"+this.flowUp+"\t"+this.sumFlowAmount;
+        return ""+phoneNumber+"\t"+this.flowLow+"\t"+this.flowUp+"\t"+this.sumFlowAmount;
     }
 }
