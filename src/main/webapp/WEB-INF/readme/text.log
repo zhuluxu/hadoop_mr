@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+
+<hello-->>
+
+
+
+-----------------------------------
+<hello-->a.txt 3>
+<hello-->b.txt 2>
+<hello-->c.txt 2>
+
+<jerry, a.txt 1>
+<jerry, b.txt 1>
+<jerry, c.txt 2>
+
+<tom, a.txt 2>
+<tom, b.txt 3>
+<tom, c.txt 1>
+------------------------------------------
+
+hello--> a.txt 3,b.txt 2,c.txt 2
+jerry--> a.txt 1,b.txt 1,c.txt 2
+tom--> a.txt 2,b.txt 3,c.txt 1

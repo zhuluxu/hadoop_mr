@@ -26,14 +26,13 @@ public class WorkCountRunner {
         /**本job所用的jar包就是本类所在的jar包*/
         job.setJarByClass(WorkCountRunner.class);
 
-        job.setJarByClass(WorkCountRunner.class);
         /**本job使用哪些类用来作为mapper和reducer*/
         job.setMapperClass(WorkCountMapper.class);
         job.setReducerClass(WorkCountReducer.class);
 
         /**本job中mapper的输出数据key的类型*/
         job.setMapOutputKeyClass(Text.class);
-        /**本job中mapperd的输出数据vlaue的类型*/
+        /**本job中mapper的输出数据value的类型*/
         job.setMapOutputValueClass(LongWritable.class);
 
         /**本job中reducer的输出数据key的类型*/
